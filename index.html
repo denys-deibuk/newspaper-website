@@ -67,6 +67,7 @@
       color: #333;
     }
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -102,7 +103,16 @@
   <section class="main-content">
     <h1>Welcome to Our Newspaper Website</h1>
     <p>This is the home page of our newspaper website. Stay tuned for the latest updates!</p>
+    <div>
+      <h2>Simple counter: <span id="counter">0</span></h2>
+      <button id="increment">Increment</button>
+    </div>
+    <div>
+      <p id="text-element">Some text</p>
+      <button id="visibility-toggler">Toggle visibility</button>
+    </div>
   </section>
+  <script src="./counter.js"></script>
 </body>
 
 </html>
