@@ -15,26 +15,26 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
-      background-image: url(img/background-desktop.jpg);
+      color: #fff;
     }
 
-    /* @media (max-width: 480px) { */
-    /*   body { */
-    /*     background-image: url(img/background-mobile.jpg); */
-    /*   } */
-    /* } */
+    @media (max-width: 480px) {
+      body {
+        background-image: url(img/background-mobile.jpg);
+      }
+    }
 
-    /* @media (min-width: 481px) and (max-width: 1024px) { */
-    /*   body { */
-    /*     background-image: url(img/background-tablet.jpg); */
-    /*   } */
-    /* } */
+    @media (min-width: 481px) and (max-width: 1024px) {
+      body {
+        background-image: url(img/background-tablet.jpg);
+      }
+    }
 
-    /* @media (min-width: 1025px) { */
-    /*   body { */
-    /*     background-image: url(img/background-desktop.jpg); */
-    /*   } */
-    /* } */
+    @media (min-width: 1025px) {
+      body {
+        background-image: url(img/background-desktop.jpg);
+      }
+    }
 
     .navbar {
       display: flex;
@@ -103,16 +103,14 @@
 
     .main-content h1 {
       font-size: 36px;
-      color: #000;
     }
 
     .main-content p {
       font-size: 18px;
-      color: #333;
     }
   </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" async></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" defer>
 </head>
 
 <body>
@@ -152,7 +150,7 @@
       }
     }
   </script>
-  <script src="./counter.js"></script>
+  <script src="./counter.js" async></script>
 </body>
 
 </html>
