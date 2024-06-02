@@ -12,45 +12,65 @@
       padding: 0;
     }
 
-    nav {
-      background-color: #343a40;
-      padding: 10px 20px;
-    }
-
-    .navbar-container {
+    .navbar {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      overflow: hidden;
+      background-color: #333;
     }
 
-    .navbar-brand {
-      color: #fff;
+    .navbar a {
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
       text-decoration: none;
-      font-size: 24px;
+      font-size: 17px;
     }
 
-    .navbarNav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
     }
 
-    .navbarNav ul li {
-      margin-right: 20px;
+    .navbar a.active {
+      background-color: #03a9fc;
+      color: white;
     }
 
-    .navbarNav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 10px 15px;
-      transition: background-color 0.3s ease;
+    .navbar .menu-icon {
+      display: none;
     }
 
-    .navbarNav ul li a:hover,
-    .navbarNav ul li a:focus {
-      background-color: #555;
+    @media screen and (max-width: 600px) {
+      .navbar {
+        justify-content: space-between;
+      }
+
+      .navbar a:not(:first-child) {
+        display: none;
+      }
+
+      .navbar a.menu-icon {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar.responsive {
+        flex-direction: column;
+        position: relative;
+      }
+
+      .navbar.responsive .menu-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .navbar.responsive a {
+        display: block;
+        text-align: left;
+      }
     }
 
     .main-content {
@@ -68,37 +88,22 @@
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
-  <nav>
-    <div class="navbar-container">
-      <a href="#" class="navbar-brand">Newspaper</a>
-      <div class="navbarNav">
-        <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="news.html">News</a>
-          </li>
-          <li>
-            <a href="sports.html">Sports</a>
-          </li>
-          <li>
-            <a href="business.html">Business</a>
-          </li>
-          <li>
-            <a href="entertainment.html">Entertainment</a>
-          </li>
-          <li>
-            <a href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div class="navbar" id="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="news.html">News</a>
+    <a href="sports.html">Sports</a>
+    <a href="business.html">Business</a>
+    <a href="entertainment.html">Entertainment</a>
+    <a href="contact.html">Contact</a>
+    <a href="#" class="menu-icon" onclick="toggleNavbar()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 
   <section class="main-content">
     <h1>Welcome to Our Newspaper Website</h1>
@@ -112,6 +117,17 @@
       <button id="visibility-toggler">Toggle visibility</button>
     </div>
   </section>
+
+  <script>
+    function toggleNavbar() {
+      var navbar = document.getElementById("navbar");
+      if (navbar.className === "navbar") {
+        navbar.className += " responsive";
+      } else {
+        navbar.className = "navbar";
+      }
+    }
+  </script>
   <script src="./counter.js"></script>
 </body>
 
